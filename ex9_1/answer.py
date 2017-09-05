@@ -12,11 +12,13 @@ def countWords(document):
 
     wordList = ''.join(CharList).split(' ')
     wordCountDic = {}
+    print(wordList)
     for word in wordList:
         if word in wordCountDic.keys():
             wordCountDic[word] += 1
         else:
-            wordCountDic[word] = 1
+            if word != '':
+                wordCountDic[word] = 1
     
     return wordCountDic
 
