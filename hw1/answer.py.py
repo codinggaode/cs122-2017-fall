@@ -114,7 +114,7 @@ def calc(expr):
             if opr == "+":
                 return addResult + calc(expr[pos:])
             elif opr == "-":
-                return addResult - calc(expr[pos:])
+                return addResult + calc("-" + expr[pos:])
         elif mode == "mul" and f == "mul":
             mulResult = exeOpr(mulResult, opr, c)
             return calc(str(mulResult) + expr[e:])
@@ -127,5 +127,3 @@ def calc(expr):
             else:
                 return exeOpr(mulResult, opr, c)
         break
-
-print(calc("1+2*3/4"))
